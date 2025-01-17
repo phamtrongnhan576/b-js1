@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Icon -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- CSS -->
+        <link href="./output.css" rel="stylesheet" />
+    </head>
+    <body class="bg-gray-100 min-h-screen flex items-center">
+        <div class="w-[1000px] mx-auto py-8">
+            <div
+                class="flex flex-wrap h-[570px] overflow-y-auto bg-white shadow-lg rounded-lg border border-gray-200"
+            >
+                <!-- Sidebar Tabs -->
+                <div class="w-full md:w-1/4 p-4 bg-gray-50 border-r">
+                    <ul
+                        class="text-sm font-medium"
+                        id="vertical-tab"
+                        data-tabs-toggle="#vertical-tab-content"
+                        role="tablist"
+                    >
+                        <li class="mb-2">
+                            <button
+                                class="w-full p-3 bg-gray-100 hover:bg-blue-100 hover:text-blue-600 hover:bg-blue-300 font-medium rounded-lg btn-tabs active"
+                                id="tab-1"
+                                data-tabs-target="#bai1"
+                                type="button"
+                                role="tab"
+                                aria-controls="bai1"
+                                aria-selected="true"
+                            >
+                                Bài 1
+                            </button>
+                        </li>
+                        <li class="mb-2">
+                            <button
+                                class="w-full p-3 bg-gray-100 hover:bg-blue-100 hover:text-blue-600 hover:bg-blue-300 rounded-lg btn-tabs"
+                                id="tab-2"
+                                data-tabs-target="#bai2"
+                                type="button"
+                                role="tab"
+                                aria-controls="bai2"
+                                aria-selected="false"
+                            >
+                                Bài 2
+                            </button>
+                        </li>
+                        <li class="mb-2">
+                            <button
+                                class="w-full p-3 bg-gray-100 hover:bg-blue-100 hover:text-blue-600 hover:bg-blue-300 rounded-lg btn-tabs"
+                                id="tab-3"
+                                data-tabs-target="#bai3"
+                                type="button"
+                                role="tab"
+                                aria-controls="bai3"
+                                aria-selected="false"
+                            >
+                                Bài 3
+                            </button>
+                        </li>
+                        <li class="mb-2">
+                            <button
+                                class="w-full p-3 bg-gray-100 hover:bg-blue-100 hover:text-blue-600 hover:bg-blue-300 rounded-lg btn-tabs"
+                                id="tab-4"
+                                data-tabs-target="#bai4"
+                                type="button"
+                                role="tab"
+                                aria-controls="bai4"
+                                aria-selected="false"
+                            >
+                                Bài 4
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content Tabs -->
+                <div class="w-full md:w-3/4 p-6" id="vertical-tab-content">
+                    <!-- Bài 1 -->
+                    <div id="bai1" role="tabpanel" aria-labelledby="tab-1">
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            💰 Tính tiền lương nhân viên
+                        </h2>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h3 class="text-blue-700 font-bold">💡 Gợi ý:</h3>
+                            <ul class="list-disc ml-4 text-gray-600">
+                                <li>
+                                    Công thức: Lương = Lương 1 ngày * số ngày
+                                    làm
+                                </li>
+                                <li>Tìm tới thẻ và lấy giá trị</li>
+                                <li>Tạo hàm cơ bản</li>
+                                <li>Gắn sự kiện click cho button</li>
+                                <li>Thay đổi nội dung cho thẻ</li>
+                                <li>Xử lý load trang với button của form</li>
+                            </ul>
+                        </div>
+                        <form class="flex flex-col gap-4">
+                            <input
+                                type="text"
+                                placeholder="Nhập lương một ngày"
+                                class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                                id="salaryInput-1"
+                            />
+                            <input
+                                type="text"
+                                placeholder="Số ngày làm"
+                                class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                                id="salaryInput-2"
+                            />
+                            <button
+                                type="button"
+                                class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700"
+                                id="btnSalary"
+                            >
+                                Tính lương
+                            </button>
+                        </form>
+                        <div
+                            class="p-4 mt-4 text-sm rounded-lg bg-green-100 flex items-center gap-[5px] border-green-200 border"
+                            alert
+                            role="alert"
+                        >
+                            <span class="mb-1">👉</span>
+                            <span class="font-bold" id="txtSalary"></span>
+                        </div>
+                    </div>
+
+                    <!-- Bài 2 -->
+                    <div
+                        id="bai2"
+                        class="hidden"
+                        role="tabpanel"
+                        aria-labelledby="tab-2"
+                    >
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            📚 Tính giá trị trung bình
+                        </h2>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h3 class="text-blue-700 font-bold">💡 Gợi ý:</h3>
+                            <ul class="list-disc ml-4 text-gray-600">
+                                <li>Tìm tới thẻ và lấy giá trị</li>
+                                <li>Tạo hàm cơ bản</li>
+                                <li>Gắn sự kiện click cho button</li>
+                                <li>Thay đổi nội dung cho thẻ</li>
+                                <li>Xử lý load trang với button của form</li>
+                                <li>Xử lý ép kiểu dữ liệu</li>
+                            </ul>
+                        </div>
+                        <form class="flex flex-col gap-4">
+                            <div
+                                class="grid grid-cols-3 gap-[16px] form-control"
+                            >
+                                <input
+                                    type="text"
+                                    placeholder="Nhập Số Thứ Nhất"
+                                    class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 form-input"
+                                    id="num-1"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Nhập Số Thứ Hai"
+                                    class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 form-input"
+                                    id="num-2"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Nhập Số Thứ Ba"
+                                    class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 form-input"
+                                    id="num-3"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Nhập Số Thứ Tư"
+                                    class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 form-input"
+                                    id="num-4"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Nhập Số Thứ Năm"
+                                    class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 form-input"
+                                    id="num-5"
+                                />
+                            </div>
+
+                            <button
+                                type="button"
+                                class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700"
+                                id="btnTB"
+                            >
+                                Tính Trung Bình
+                            </button>
+                        </form>
+                        <div
+                            class="p-4 mt-4 text-sm rounded-lg bg-green-100 flex items-center gap-[5px] border-green-200 border"
+                            alert
+                            role="alert"
+                        >
+                            <span class="mb-1">👉</span>
+                            <span class="font-bold" id="txtTB"></span>
+                        </div>
+                    </div>
+
+                    <!-- Bài 3 -->
+                    <div
+                        id="bai3"
+                        class="hidden h-full w-full"
+                        role="tabpanel"
+                        aria-labelledby="tab-3"
+                    >
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            💱 Quy đổi tiền
+                        </h2>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h3 class="text-blue-700 font-bold">💡 Gợi ý:</h3>
+                            <ul class="list-disc ml-4 text-gray-600">
+                                <li>Áp dụng các kiến thức như bài 1 và 2</li>
+                                <li>Giá USD mặc định 1 USD = 23500</li>
+                                <li>
+                                    Có thể dùng thêm NumberFormat để số tiền
+                                    hiển thị đẹp hơn:
+                                    <a
+                                        class="text-blue-500 underline decoration-solid"
+                                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat"
+                                        target="_blank"
+                                        >NumberFormat</a
+                                    >
+                                    <br />
+                                    VD: new
+                                    Intl.NumberFormat('vn-VN').format(23500); =>
+                                    23,500
+                                </li>
+                            </ul>
+                        </div>
+                        <form class="flex flex-col gap-[20px]">
+                            <input
+                                type="text"
+                                placeholder="Nhập Số Tiền USD"
+                                class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 form-input"
+                                id="money"
+                            />
+
+                            <button
+                                type="button"
+                                class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700"
+                                id="btnCurrency"
+                            >
+                                Quy Đổi Tiền
+                            </button>
+                        </form>
+                        <div
+                            class="p-4 mt-4 text-sm rounded-lg bg-green-100 flex items-center gap-[5px] border-green-200 border"
+                            alert
+                            role="alert"
+                        >
+                            <span class="mb-1">👉</span>
+                            <span class="font-bold" id="txtCurrency"></span>
+                        </div>
+                    </div>
+
+                    <!-- Bài 4 -->
+                    <div
+                        id="bai4"
+                        class="hidden"
+                        role="tabpanel"
+                        aria-labelledby="tab-4"
+                    >
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">
+                            📏 Tính diện tích, chu vi hình chữ nhật
+                        </h2>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h3 class="text-blue-700 font-bold">💡 Gợi ý:</h3>
+                            <ul class="list-disc ml-4 text-gray-600">
+                                <li>Áp dụng các kiến thức như các bài trước</li>
+                                <li>Diện tích: dài x rộng</li>
+                                <li>Chu vi: (dài + rộng) x 2</li>
+                            </ul>
+                        </div>
+                        <form class="flex flex-col gap-4">
+                            <input
+                                type="text"
+                                placeholder="Nhập Chiều Dài"
+                                class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                                id="width"
+                            />
+                            <input
+                                type="text"
+                                placeholder="Nhập Chiều Rộng"
+                                class="border p-3 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                                id="height"
+                            />
+                            <button
+                                type="button"
+                                class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700"
+                                id="btnCal"
+                            >
+                                Tính
+                            </button>
+                        </form>
+                        <div
+                            class="p-4 mt-4 text-sm rounded-lg bg-green-100 flex items-center gap-[5px] border-green-200 border"
+                            alert
+                            role="alert"
+                        >
+                            <span class="mb-1">👉</span>
+                            <span class="font-bold" id="txtCal"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Js -->
+        <script src="./main.js"></script>
+
+        <!-- flowbite -->
+        <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+
+        <!-- Icon -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+            integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </body>
+</html>
